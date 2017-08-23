@@ -424,8 +424,94 @@ namespace Bomb_Manual
 
         static void ComplicatedWires()
         {
+            string color = "blank";
+            string yn = "no";
+            bool star = false;
+            bool led = false;
+            bool even = false;
+            bool parallel = false;
+            bool battery = false;
+            bool again = true;
+            string ynm = "yes";
 
-        }
+            Console.WriteLine("Is the last digit of the serial number even?");
+            yn = Console.ReadLine();
+            if (yn == "yes") { even = true; }
+            Console.WriteLine("Is there a parallel port on the bomb? (long, pink, has holes in it.)");
+            yn = Console.ReadLine();
+            if (yn == "yes") { parallel = true; }
+            Console.WriteLine("Are there two or more batteries on the bomb?");
+            yn = Console.ReadLine();
+            if (yn == "yes") { battery = true; }
+
+            do
+            {
+                Console.WriteLine("What color is the wire? (w = white | r = red | b = blue | wr | wb | rb)");
+                color = Console.ReadLine();
+                Console.WriteLine("Is there a star?");
+                yn = Console.ReadLine();
+                if (yn == "yes") { star = true; }
+                Console.WriteLine("Is there an LED?");
+                yn = Console.ReadLine();
+                if (yn == "yes") { led = true; }
+
+                //DoICut(color, star, led, even, parallel, battery);
+                //Can't figure this part out.  I'll mess with it later.
+
+                if (color == "w")
+                {
+                    if (star == false && led == false) { Cut(); }
+                    else if (star == true && led == true && battery == true) { Cut(); }
+                    else if (star == true) { Cut(); }
+                    else if (led == true) { Dont(); }
+                }
+                else if (color == "b")
+                {
+                    if (star == false && led == false && even == true) { Cut(); }
+                    else if (star == true && led == true && parallel == true) { Cut(); }
+                    else if (led == true && parallel == true) { Cut(); }
+                    else if (star == true) { Dont(); }
+                }
+                else if (color == "r")
+                {
+                    if (star = false && led == false && even == true) { Cut(); }
+                    else if (star == true && led == true && battery == true) { Cut(); }
+                    else if (led == true && battery == true) { Cut(); }
+                    else if (star == true) { Cut(); }
+                }
+                else if (color == "rb")
+                {
+                    if (star == false && led == false && even == true) { Cut(); }
+                    else if (star == true && led == true) { Dont(); }
+                    else if (led == true && even == true) { Cut(); }
+                    else if (star == true && parallel == true) { Cut(); }
+                }
+                
+                //if (even == false && parallel == false && battery == false) { }
+                //else if (even == false && parallel == false && battery == true) { }
+                //else if (even == false && parallel == true && battery == false) { }
+                //else if (even == true && parallel == false && battery == false) { }
+                //else if (even == false && parallel == true && battery == true) { }
+                //else if (even == true && parallel == true && battery == false) { }
+                //else if (even == true && parallel == false && battery == true) { }
+                //else if (even == true && parallel == true && battery == true) { }
+
+                //For the looping
+                Console.WriteLine("Are there more wires?");
+                ynm = Console.ReadLine();
+                if (ynm == "no") { again = false; }
+            } while (again == true);
+        } //End Complicated Wires
+
+        static void Cut() { Console.WriteLine("Cut the wire."); }
+        static void Dont() { Console.WriteLine("Don't cut the wire."); }
+
+        //static bool DoICut(color, star, led, even, parallel, battery)
+        //{
+            //bool cut = false;
+            //if (led == true)
+            //return cut;
+        //}
 
     }  //End Class
 }  //End all
