@@ -455,9 +455,6 @@ namespace Bomb_Manual
                 yn = Console.ReadLine();
                 if (yn == "yes") { led = true; }
 
-                //DoICut(color, star, led, even, parallel, battery);
-                //Can't figure this part out.  I'll mess with it later.
-
                 if (color == "w")
                 {
                     if (star == false && led == false) { Cut(); }
@@ -487,15 +484,6 @@ namespace Bomb_Manual
                     else if (star == true && parallel == true) { Cut(); }
                 }
                 
-                //if (even == false && parallel == false && battery == false) { }
-                //else if (even == false && parallel == false && battery == true) { }
-                //else if (even == false && parallel == true && battery == false) { }
-                //else if (even == true && parallel == false && battery == false) { }
-                //else if (even == false && parallel == true && battery == true) { }
-                //else if (even == true && parallel == true && battery == false) { }
-                //else if (even == true && parallel == false && battery == true) { }
-                //else if (even == true && parallel == true && battery == true) { }
-
                 //For the looping
                 Console.WriteLine("Are there more wires?");
                 ynm = Console.ReadLine();
@@ -506,12 +494,7 @@ namespace Bomb_Manual
         static void Cut() { Console.WriteLine("Cut the wire."); }
         static void Dont() { Console.WriteLine("Don't cut the wire."); }
 
-        //static bool DoICut(color, star, led, even, parallel, battery)
-        //{
-            //bool cut = false;
-            //if (led == true)
-            //return cut;
-        //}
+
 
     }  //End Class
 }  //End all
