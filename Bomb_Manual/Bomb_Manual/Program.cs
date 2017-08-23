@@ -20,11 +20,11 @@ namespace Bomb_Manual
             //Figure out how to just list all modules here
             Console.WriteLine("1) Regular Wires");
             Console.WriteLine("2) Button");
-            Console.WriteLine("3) Keypads");
+            //Console.WriteLine("3) Keypads (Not Working)");
             Console.WriteLine("4) Simon Says");
-            Console.WriteLine("5) Who's on First");
+            //Console.WriteLine("5) Who's on First (Not Working)");
             Console.WriteLine("6) Memory");
-            Console.WriteLine("7) Morse Code");
+            //Console.WriteLine("7) Morse Code (Not Working)");
             Console.WriteLine("8) Complicated Wires");
 
 
@@ -34,11 +34,11 @@ namespace Bomb_Manual
             //if (menu == 0) { Strikes(strikes); }
             else if (menu == 1) { Wires(); }
             else if (menu == 2) { Button();  }
-            else if (menu == 3) { Console.WriteLine("Can't help you there. See the actual manual.");  }
+            else if (menu == 3) { Console.WriteLine("Can't help you there. See the actual manual.");  Console.ReadLine(); }
             else if (menu == 4) { SimonSays(); }
-            else if (menu == 5) { Console.WriteLine("I'm trying to work out how to do this.  It's a lot of words."); }
+            else if (menu == 5) { Console.WriteLine("I'm trying to work out how to do this.  It's a lot of words."); Console.ReadLine(); }
             else if (menu == 6) { Memory(); }
-            else if (menu == 7) { Console.WriteLine("Gotta figure out how to do a morse code thing.  Maybe just print the whole alphabet?"); }
+            else if (menu == 7) { Console.WriteLine("Gotta figure out how to do a morse code thing.  Maybe just print the whole alphabet?"); Console.ReadLine(); }
             else if (menu == 8) { ComplicatedWires(); }
         }  //End Main
 
@@ -493,8 +493,6 @@ namespace Bomb_Manual
 
         static void Cut() { Console.WriteLine("Cut the wire."); }
         static void Dont() { Console.WriteLine("Don't cut the wire."); }
-
-
 
     }  //End Class
 }  //End all
