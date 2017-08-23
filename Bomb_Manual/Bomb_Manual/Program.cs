@@ -488,7 +488,7 @@ namespace Bomb_Manual
                 Console.WriteLine("Are there more wires?");
                 ynm = Console.ReadLine();
                 if (ynm == "no") { again = false; }
-            } while (again == true);
+            } while (again == true); 
         } //End Complicated Wires
 
         static void Cut() { Console.WriteLine("Cut the wire."); }
